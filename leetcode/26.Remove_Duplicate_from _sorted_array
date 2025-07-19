@@ -1,0 +1,26 @@
+
+#HINT Using a 2 pointer approach for tracking unique elements.
+
+
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int n = nums.size();
+        int k = 1;
+        int first = 0,second = 1;
+        if(n==0){
+            return 0;
+        }
+        for(int i = 1;i < n; i++){
+            if(nums[second] !=nums[first]){
+                nums[++first] = nums[second++];
+                k++;
+            }
+            else{
+                second++;
+            }
+        }
+
+    return k;
+    }
+};
