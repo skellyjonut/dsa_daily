@@ -1,0 +1,23 @@
+//First i thought of the 2 pointer approach but it only works with sorted array so when given unsorted array i cant return the correct indices
+
+//THe correct approach is to create unordered map or hash table , store the value of index of each element, and at the same time check if it has complement of the nums[i] currently
+//iterating. If complement found return unordered maps index and i
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int,int> uo;
+        int k = nums.size();
+        int c;
+        for(int i = 0; i < k; i++){
+            c=target-nums[i];
+            if(uo.count(c)){
+                return {uo.at(c),i};
+            }
+            else{
+                uo.insert({nums[i],i});
+            }
+        }
+    return {};
+    }
+};
