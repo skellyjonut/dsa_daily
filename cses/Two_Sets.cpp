@@ -2,11 +2,11 @@
 using namespace std;
 
 int main(){
-    int n;
+    long long n;
     cin >> n;
     vector<int> v1;
     vector<int> v2;
-    int t = (n*(n+1)/2)/2;
+    long long t = (n*(n+1)/2)/2;
     
     if((n*(n+1)/2)%2 == 1){
         cout << "NO";
@@ -14,7 +14,7 @@ int main(){
     }
     else{
         cout << "YES" << endl;
-        for(int i =n; i >=1;i--){
+        for(long long i =n; i >=1;i--){
             if(i <= t){
                 v1.push_back(i);
                 t=t-i;
@@ -24,12 +24,12 @@ int main(){
             }
         }
         cout << v1.size() << endl;
-        for(int i:v1){
+        for(long long i:v1){
             cout << i << " ";
         }
         cout << endl;
         cout << v2.size() << endl;
-        for(int i : v2){
+        for(long long i : v2){
             cout << i << " ";
         }
     }
