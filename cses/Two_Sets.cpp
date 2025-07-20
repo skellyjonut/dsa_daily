@@ -13,6 +13,7 @@ int main(){
         return 0;
     }
     else{
+        cout << "YES" << endl;
         for(int i =n; i >=1;i--){
             if(i <= t){
                 v1.push_back(i);
