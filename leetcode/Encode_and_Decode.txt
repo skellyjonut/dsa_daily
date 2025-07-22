@@ -1,0 +1,29 @@
+class Solution {
+public:
+
+    string encode(vector<string>& strs) {
+        string res;
+        for(auto i:strs){
+            string len = to_string(i.length());
+            res = res+len+"#"+i;
+        }
+        return res;
+    }
+
+    vector<string> decode(string s) {
+        vector<string> v;
+
+        int i =0;
+        while(i < s.size()){
+            int j = i;
+            while(s[j]!='#'){
+                j++;
+            }
+            int strlen = stoi(s.substr(i,j-i));
+            string add = s.substr(j+1,strlen);
+            v.push_back(add);
+            i = j+strlen+1;
+       }
+       return v;
+    }
+};
