@@ -13,7 +13,7 @@ int main(){
         for(long long j=0;j<n;j++){
             cin >> v[j];
         }
-        long long res = INT_MIN;
+        long long res = v[0];
 
         for(long long k = 1; k <n-1;k++){
             res = max(res,v[k+1] - v[k]);
