@@ -6,7 +6,7 @@ int main(){
     cin >> t;
     while(t--){
         cin >> n;
-        int c = 10;
+        long long c = 10;
         vector<long long> res;
         for(int i = 1; i < 17; i++){
             if(n%(c+1) == 0){
