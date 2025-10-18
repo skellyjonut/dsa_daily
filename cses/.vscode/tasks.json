@@ -7,7 +7,7 @@
             "command": "cmd.exe",
             "args": [
                 "/c",
-                "if not exist \"${fileDirname}\\build\" mkdir \"${fileDirname}\\build\" && C:\\msys64\\ucrt64\\bin\\g++.exe -g \"${file}\" -o \"${fileDirname}\\build\\${fileBasenameNoExtension}.exe\" && \"${fileDirname}\\build\\${fileBasenameNoExtension}.exe\""
+                "(if not exist \"${fileDirname}\\build\" mkdir \"${fileDirname}\\build\") && C:\\msys64\\ucrt64\\bin\\g++.exe -g \"${file}\" -o \"${fileDirname}\\build\\${fileBasenameNoExtension}.exe\" && \"${fileDirname}\\build\\${fileBasenameNoExtension}.exe\""
             ],
             "options": {
                 "cwd": "${fileDirname}"

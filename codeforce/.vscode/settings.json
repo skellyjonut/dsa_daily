@@ -1,5 +1,13 @@
 {
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "vector": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "system_error": "cpp",
+        "array": "cpp",
+        "regex": "cpp"
     }
 }
