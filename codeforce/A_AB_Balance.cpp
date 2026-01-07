@@ -11,12 +11,12 @@ int main() {
         string s;
         cin >> s;
         int n = s.size();
-
-        if (s[0] != s[n-1]) {
-            // Flip last character to match the first
+        if(s[0] == s[n-1]){
+            
+        }
+        else{
             s[n-1] = s[0];
         }
-
         cout << s << "\n";
     }
 
