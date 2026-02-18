@@ -1,28 +1,37 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
+#define ll long long
+#define pb push_back
+#define ff first
+#define ss second
+#define all(x) (x).begin(), (x).end()
 
-int main(){
-    int n,a;
-    vector<int> st(4);
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int n;
     cin >> n;
-    for(int i = 0; i < n; i++){
-        cin >> a;
-        st[a-1]++;
+    vector<int> v(n);
+    for(int i = 0; i < n; i++)cin >> v[i];
+    int one = 0,two=0,three=0,four=0;
+    for(int i =0; i < n;i++){
+        if(v[i] == 1)one++;
+        if(v[i] == 2)two++;
+        if(v[i] == 3)three++;
+        if(v[i] == 4)four++;
     }
-    int res = 0;
-    res+=st[3];
-    res+=st[2];
-    if(st[2] >= st[1]){
-        st[1] = 0;
+    int car = 0;
+    car+=four;
+    car+=three;
+    one-=min(one,three);
+    car = car + two/2;
+    if(two%2 == 1){
+        car++;
+        one-=min(one,2);
     }
-    else{
-        st[0] = st[0]-st[2];
-    }
-    if(st[1]%4 == 2){
-        if(st[0] <= 2)st[0]=0;
-        res+=st[1]/2;
-    }
-    res = res+ (st[0]+4-1)/4;
-    cout << res;
+    car = car + (one+3)/4;
+    cout << car << "\n";
+    return 0;
 }
