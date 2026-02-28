@@ -17,23 +17,19 @@ int main() {
         int n;
         cin >> n;
 
-        vector<pair<ll,ll>> v(n);
+        vector<int> v(n);
         for (int i = 0; i < n; i++) {
-            cin >> v[i].first;
-            v[i].second = i+1;
+            cin >> v[i];
         }
 
         // ---- Your logic here ----
-        unordered_map<int,int> mp;
-        ll res = 0;
-        sort(v.begin(),v.end());
-        for(int i = 0; i < n; i++){
-            for(int j = i+1; j < n;j++){
-                if(v[i].ff*v[j].ff >= 2*n)break;
-                if(v[i].ff*v[j].ff == v[i].ss+v[j].ss)res++;
-            }
+        int longest = 1;
+        int cnt = 1;
+        if(is_sorted(v.begin(),v.end()))cout << v.size() << "\n";
+        else{   
+            cout << 1 << "\n";
         }
-        cout << res << "\n";
+
     }
 
     return 0;

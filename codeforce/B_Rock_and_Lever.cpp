@@ -17,20 +17,21 @@ int main() {
         int n;
         cin >> n;
 
-        vector<pair<ll,ll>> v(n);
+        vector<ll> v(n);
         for (int i = 0; i < n; i++) {
-            cin >> v[i].first;
-            v[i].second = i+1;
+            cin >> v[i];
         }
-
-        // ---- Your logic here ----
-        unordered_map<int,int> mp;
-        ll res = 0;
-        sort(v.begin(),v.end());
-        for(int i = 0; i < n; i++){
-            for(int j = i+1; j < n;j++){
-                if(v[i].ff*v[j].ff >= 2*n)break;
-                if(v[i].ff*v[j].ff == v[i].ss+v[j].ss)res++;
+        unordered_map<ll,ll> mp;
+        // ---- Your logic here ----  
+        for(int i = 0 ; i < n; i++){
+            ll res = 31 - __builtin_clz(v[i]);
+            mp[res]++;
+        }
+        long long res = 0;
+        for(auto i:mp){
+            if(i.ss >= 2){
+                ll val = (i.ss)*(i.ss-1)/2;
+                res+=val;
             }
         }
         cout << res << "\n";

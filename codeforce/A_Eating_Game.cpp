@@ -17,23 +17,19 @@ int main() {
         int n;
         cin >> n;
 
-        vector<pair<ll,ll>> v(n);
+        vector<int> v(n);
+        int mx = INT_MIN;
         for (int i = 0; i < n; i++) {
-            cin >> v[i].first;
-            v[i].second = i+1;
+            cin >> v[i];
+            mx = max(v[i],mx);
         }
 
         // ---- Your logic here ----
-        unordered_map<int,int> mp;
-        ll res = 0;
-        sort(v.begin(),v.end());
-        for(int i = 0; i < n; i++){
-            for(int j = i+1; j < n;j++){
-                if(v[i].ff*v[j].ff >= 2*n)break;
-                if(v[i].ff*v[j].ff == v[i].ss+v[j].ss)res++;
-            }
+        int cnt = 0;
+        for(int i = 0 ; i < n; i++){
+            if(v[i] == mx)cnt++;
         }
-        cout << res << "\n";
+        cout << cnt << "\n";
     }
 
     return 0;
