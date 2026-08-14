@@ -19,7 +19,7 @@ int main() {
     while (t--) {
         int n,k;
         cin >> n >> k;
-        
+        if(k >= n-2)
     }
 
     return 0;
