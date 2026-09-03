@@ -19,20 +19,7 @@ int main() {
     while (t--) {
         ll n;
         cin >> n;
-        string s;
-        cin >> s;
-        vector<int> v;
-        for(int i = 0 ; i < n; i++){
-            if(s[i] == '*')v.push_back(i);
-        }
-        ll k = v.size();
-        ll mid = (k-1)/2;
-
-        ll res = 0;
-        for(int i = 0 ; i < k; i++){
-            res += abs(v[i] - (v[mid]-mid+i));
-        }
-        cout << res << "\n";
+        cout << 2*n - __builtin_popcountll(n) << "\n";
     }
 
     return 0;

@@ -15,17 +15,18 @@ int main() {
     cin >> n;
     vector<int> res(3,0);
     for(int i = 0 ; i < n; i++){
-        vector<int> c(3);
-        for(int j = 0; j < 3; j++)cin>>c[j];
+        int a,b,c;
+        vector<int> v(3,0);
         vector<int> temp(3,0);
-        for(int j = 0; j < 3;j++){
+        cin >> v[0] >> v[1] >> v[2];
+        for(int j = 0; j < 3; j++){
             for(int k = 0; k < 3; k++){
                 if(j != k){
-                    temp[k] = max(temp[k],res[j]+c[k]);
+                    temp[j] = max(temp[j],res[k]+v[j]);
                 }
             }
         }
-        res = temp;
+        res=temp;
     }
     cout << max({res[0],res[1],res[2]});
 

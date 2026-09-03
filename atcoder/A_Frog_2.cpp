@@ -11,16 +11,19 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int n;
-    cin >> n;
+    int n,k;
+    cin >> n >> k;
     vector<int> v(n);
     for(int i = 0 ; i < n; i++)cin >> v[i];
 
     vector<int> dp(n,INF);
     dp[0] = 0;
-    dp[1] = abs(v[1]-v[0]);
-    for(int i = 2 ; i < n; i++){
-        dp[i] = min(dp[i-1] + abs(v[i]-v[i-1]),dp[i-2] + abs(v[i]-v[i-2]));
+    for(int i = 0 ; i < n; i++){
+        for(int j = i+1 ; j <= i+k; j++){
+            if(j < n){
+                dp[j] = min(dp[j],dp[i] + abs(v[j]-v[i]));
+            }
+        }
     }
     cout << dp[n-1];
     return 0;
